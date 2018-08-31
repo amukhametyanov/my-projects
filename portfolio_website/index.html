@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <title>Artur Mukhametyanov</title>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+      <script src="https://code.jquery.com/jquery-3.3.1.js"
+            crossorigin="anonymous"></script>
+      <style type="text/css">
+            *,
+            *::before,
+            *::after {
+                  box-sizing: border-box;
+            }
+            *:focus {
+                  outline: none;
+            }
+            body {
+                  padding: 0;
+                  margin: 0;
+                  background: #000;
+                  color: white;
+                  font-family: "Oxygen", sans-serif;
+
+            }
+            a {
+                  text-decoration: none'
+            }
+            img {
+                  width: 100%;
+            }
+            .home img {
+                  width: 100%;
+                  -webkit-filter: grayscale(100%) contrast(100%);
+                  filter: grayscale(100%) contrast(200%) brightness(60%);
+            }
+            .projects img {
+                  filter: grayscale(100%);
+            }
+            aside {
+                  position: fixed;
+                  background: #222;
+                  top: 0px;
+                  left: 0px;
+                  width: 120px;
+                  height: 100%;
+                  overflow: none;
+                  z-index: 1;
+                  text-align: center;
+                  padding: 0;
+            }
+            aside img {
+                  filter: grayscale(100%) contrast(50%) brightness(100%);
+                  margin-bottom: -3px;
+            }
+            .material-icons.md-36 {
+                  font-size: 36px;
+            }
+            aside a {
+                  display: block;
+                  padding: 15px 0;
+                  color: white;
+                  transition: all 0.35s;
+                  text-transform: uppercase;
+                  font-size: 0.75em;
+                  letter-spacing: 2px;
+            }
+            aside p {
+                  margin: 0;
+                  padding: 0;
+            }
+            aside a:hover {
+                  background: #000;
+            }
+            aside nav a:nth-child(2) {
+                  background: #000;
+            }
+            aside nav a:nth-child(2):hover {
+                  background: #b2b2b2;
+                  color: #222;
+            }
+            main {
+                  max-width: 980px;
+                  background: #000;
+                  margin-left: 20%;
+                  padding: 12px 50px 12px 50px;
+            }
+            header {
+                  text-align: center;
+                  letter-spacing: 2px;
+            }
+            header h1 {
+                  font-weight: bold;
+                  font-size: 4em;
+                  letter-spacing: 4px;
+            }
+            header h5 {
+                  font-weight: 300;
+                  font-size: 1em;
+                  letter-spacing: 4px;
+                  color: #b2b2b2;
+            }
+            .about,
+            .projects,
+            .contact {
+                  line-height: 1.5em;
+                  letter-spacing: 1px;
+                  font-weight: 300;
+            }
+            .about h2,
+            .projects h2,
+            .contact h2 {
+                  font-weight: 300;
+                  text-transform: uppercase;
+                  text-decoration: line-through;
+                  padding-bottom: 10px;
+                  margin: 100px 0 0 0;
+                  letter-spacing: 4px;
+            }
+            .about p {
+                  color: #b2b2b2;
+            }
+            .about span {
+                  font-weight: 600;
+                  color: white;
+            }
+            .about h3 {
+                  font-weight: 300;
+                  margin: 50px 0;
+            }
+            .container {
+                  width: 100%;
+                  background: #b2b2b2;
+            }
+            .skills {
+                  text-align: right;
+                  padding-right: 20px;
+                  line-height: 30px;
+                  color: white;
+                  background: #424242;
+            }
+            .html5 {
+                  width: 95%;
+            }
+            .java {
+                  width: 65%;
+            }
+            .php {
+                  width: 85%;
+            }
+      </style>
+</head>
+<body>
+      <aside>
+            <nav>
+                  <img src="images/artur.jpg" alt="artur">
+                  <a href="#home"><i class="material-icons md-36">home</i><p>Home</p></a>
+                  <a href="#about"><i class="material-icons md-36">person</i><p>About</p></a>
+                  <a href="#projects"><i class="material-icons md-36">image</i><p>Projects</p></a>
+                  <a href="#contact"><i class="material-icons md-36">mail</i><p>Contact</p></a>
+            </nav>
+
+      </aside>
+
+      <nav class="mobile-nav">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Projects</a>
+            <a href="">Contact</a>
+      </nav>
+
+      <main>
+            <header class="home" id="home"><br><br>
+                  <h1>Hi! I'm Artur</h1>
+                  <h5>Developer</h5>
+                  <img src="images/artur.jpg" alt="artur">
+
+            </header>
+
+      </main>
+
+      <section class="about" id="about">
+            <h2>A little bit about me...</h2>
+            <p>
+                  <span>Hello, I'm Artur </span> I'm Developer, life long learner, and ready for new
+                  opportunities. A bit about me, I love books, the arts, tech and all the things that
+                  applies creativity to my everyday life.
+            </p>
+            <p>
+                  I believe in user centered design and delivering the best possible
+                  experiences to people. I have experience with HTML5, CSS3, Bootstrap, JavaScript,
+                  JQuery, PHP, Java, AngularJS, Git, Github.
+            </p>
+
+            <h3>Skills</h3>
+            <p>HTML5</p>
+            <div class="container">
+                  <div class="skills html5">95%</div>
+            </div>
+
+            <p>CSS3</p>
+            <div class="container">
+                  <div class="skills html5">95%</div>
+            </div>
+
+            <p>JavaScript</p>
+            <div class="container">
+                  <div class="skills html5">95%</div>
+            </div>
+
+            <p>Java</p>
+            <div class="container">
+                  <div class="skills java">65%</div>
+            </div>
+
+            <p>PHP5</p>
+            <div class="container">
+                  <div class="skills php">85%</div>
+            </div>
+
+            <p>JQuery</p>
+            <div class="container">
+                  <div class="skills html5">95%</div>
+            </div>
+
+      </section>
+
+      <section class="projects" id="projects">
+            <h2>Projects</h2>
+
+            <div class="row-helves">
+                  <div class="col">
+                        <img src="images/artur.jpg" alt="">
+                        <h3>Business</h3>
+                        <p>
+                              Building Responsive and thoughtful sites
+                              for small and large businesses.
+                        </p>
+                  </div>
+                  <div class="col">
+                        <img src="images/artur.jpg" alt="">
+                        <h3>Mobile</h3>
+                        <p>
+                              Fully Responsive, mobile ready designs and
+                              implementation for all.
+                        </p>
+                  </div>
+                  <div class="col">
+                        <img src="images/artur.jpg" alt="">
+                        <h3>UX Design</h3>
+                        <p>
+                              Thoughtful and intuitive user experiences. All of my
+                              disigns will be guaranteed to work for your clients.
+                        </p>
+                  </div>
+                  <div class="col">
+                        <img src="images/artur.jpg" alt="">
+                        <h3>Personal</h3>
+                        <p>
+                              I also design and build for personal projects. No ideas
+                              are too small and everyone deserves a voice on the web
+                        </p>
+                  </div>
+            </div>
+      </section>
+
+      <section class="contact" id="contact">
+            <h2>Contact</h2>
+            <div class="container">
+                  <form action="">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+                        <label for="name">Email</label>
+                        <input type="text" id="email" name="email">
+                        <label for="name">Message</label>
+                        <textarea name="message" id="message"
+                        style="height:200px;"></textarea>
+                        <input type="submit" value="message">
+                  </form>
+            </div>
+
+      </section>
+      <footer>
+            <section class="top-bar">
+                  <a href=""><i class="fab fa-facebook-f"></i></a>
+                  <a href=""><i class="fab fa-twitter"></i></a>
+                  <a href=""><i class="fab fa-github"></i></a>
+            </section>
+            <section class="bottom-bar">
+                  <p>&copy 2018 Artur Mukhametyanov </p>
+            </section>
+      </footer>
+
+</body>
+</html>
