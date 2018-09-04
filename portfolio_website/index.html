@@ -149,6 +149,151 @@
             .php {
                   width: 85%;
             }
+            .html5 h3 {
+                  color: white;
+                  font-weight: 300;
+                  letter-spacing: 2px;
+            }
+            .html5 p {
+                  font-size: 0.875em;
+            }
+            .row-halves {
+                  display: -webkit-box;
+                  display: -ms-flexbox;
+                  display: flex;
+                  justify-content: space-between;
+                  margin: 20px 0;
+                  -webkit-flex-pack:justify;
+            }
+            .row-halves .col {
+                  width: 49%;
+            }
+            .col {
+                  border: 1px solid #222;
+                  background: #222;
+                  color: #b2b2b2;
+                  padding: 10px;
+            }
+            label {
+                  color: #b2b2b2;
+            }
+            form input[type="text"],
+            select,
+            textarea {
+                  width: 100%;
+                  padding: 12px;
+                  border: none;
+                  border: 1px solid #222;
+                  background: transparent;
+                  margin-top: 6px;
+                  margin-bottom: 16px;
+                  resize: vertical;
+                  color: #b2b2b2;
+            }
+            form input[text="text"]:focus,
+            textarea:focus {
+                  outline: none;
+                  border: 1px solid #009688;
+            }
+            input[type="submit"] {
+                  background: transparent;
+                  color: #b2b2b2;
+                  text-transform: uppercase;
+                  padding: 12px 20px;
+                  border: 1px solid #222;
+                  cursor: pointer;
+                  transition all 0.35s;
+            }
+            input[type="submit"]:hover {
+                  background: #b2b2b2;
+                  color: #222;
+            }
+            .contact .container {
+                  margin-top: 20px;
+                  margin-bottom: 100px;
+                  background: transparent;
+                  padding: 20px 0;
+            }
+            .footer {
+                  border-top: 1px solid #222;
+            }
+            .top-bar {
+                  padding: 20px 0;
+                  text-align: center;
+            }
+            .top-bar a{
+                  margin: 10px;
+                  font-size: 2em;
+                  color: #b2b2b2;
+                  transition: all 0.35s;
+                  display: inline-block;
+            }
+            .top-bar a:hover {
+                  transform: scale(1.1);
+                  color: #009688;
+            }
+            .bottom-bar {
+                  background: #000;
+                  font-size: 0.75em;
+                  text-align: center;
+            }
+            @media (max-width: 768px){
+                  .row-halves {
+                        display: block;
+                  }
+                  .row-halves .col {
+                        width: 100%;
+                        margin: 0 0 10px 0;
+                  }
+            }
+            @media (max-width: 601px){
+                  aside {
+                        display: none;
+                  }
+                  main {
+                        width: 100%;
+                        margin: 0 auto;
+                        padding: 12px 25px;
+                  }
+                  header {
+                        margin-top: 80px;
+                  }
+                  header h1 {
+                        font-size: 3em;
+                        line-height: 1.4em;
+                  }
+                  header h5 {
+                        font-size: 1em;
+                        letter-spacing: 2px;
+                  }
+                  .mobile-nav{
+                        position: fixed;
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-around;
+                        background: rgba(0,0,0,0.8);
+                        z-index: 1;
+                  }
+                  .mobile-nav a{
+                        width: 100%;
+                        color: #b2b2b2;
+                        text-transform: uppercase;
+                        font-size: 0.875em;
+                        letter-spacing: 2px;
+                        text-align: center;
+                        padding: 10px 10px;
+                        transition: all 0.35s;
+                  }
+                  .mobile-nav a:hover {
+                        background: #b2b2b2;
+                        color: #222;
+                  }
+            }
+            @media (min-width: 600px) {
+                  .mobile-nav {
+                        display: none;
+                  }
+            }
       </style>
 </head>
 <body>
@@ -229,7 +374,7 @@
       <section class="projects" id="projects">
             <h2>Projects</h2>
 
-            <div class="row-helves">
+            <div class="row-halves">
                   <div class="col">
                         <img src="images/artur.jpg" alt="">
                         <h3>Business</h3>
