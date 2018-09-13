@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Artur Mukhametyanov</title>
+  <meta name="description" content="Artur Mukhametyanov">
+  <meta name="author" content="resume">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/master.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+  <script src="js/global.js"></script>
+</head>
+
+<body ng-app="myApp">
+<!--
+  <div id="feedback" class="success">
+    <h3>Success!</h3>
+    <p>You're reading all about artur.</p>
+  </div>
+-->
+
+
+  <header>
+        <div class="websiteOwner">
+          <img class="icon" src="images/icon.jpg" alt="icon">
+          <h1 class="profileInfo">Artur Mukhametyanov</h1>
+        </div>
+    <nav>
+      <a class="about" href="#!">About</a>
+      <a class="workExp" href="#!work_experience">Work Experience</a>
+      <a class="edu" href="#!education">Education</a>
+      <a class="skills" href="#!skills">Skills</a>
+      <a class="proj" href="#!projects">Projects</a>
+      <a class="cont" href="#!contact">Contact</a>
+    </nav>
+  </header>
+
+
+
+  <main>
+    <div class="artur">
+      <img src="images/artur.jpg" alt="Picture of Artur Mukhametyanov">
+    </div>
+    <div ng-view class="infoArtur"></div>
+
+  </main>
+
+  <footer>
+        <ul>
+             <li><span class="footerName">© 2018 Artur Mukhametyanov</span></li>
+             <!-- <li><span class="footerLink"></span></li> -->
+        </ul>
+  </footer>
+
+  <script>
+      var app = angular.module("myApp", ["ngRoute", "ngAnimate"]);
+      app.config(function($routeProvider) {
+           $routeProvider
+           .when("/", {
+                 templateUrl: "about.html",
+                 controller: "aboutCtrl"
+           })
+           .when("/work_experience", {
+                 templateUrl: "work_experience.html",
+                 controller: "workCtrl"
+           })
+           .when("/education", {
+                 templateUrl: "education.html",
+                 controller: "eduCtrl"
+           })
+           .when("/skills", {
+                 templateUrl: "skills.html",
+                 controller: "skillsCtrl"
+           })
+           .when("/projects", {
+                 templateUrl: "projects.html",
+                 controller: "projectsCtrl"
+           })
+           .when("/contact", {
+                 templateUrl: "contact.html",
+                 controller: "contactCtrl"
+           });
+      });
+      app.controller("aboutCtrl", function($scope) {
+            $(".about").addClass("activeLink");
+            $(".workExp, .edu, .skills, .proj, .cont").removeClass("activeLink");
+      });
+      app.controller("workCtrl", function($scope) {
+            $(".workExp").addClass("activeLink");
+            $(".about, .edu, .skills, .proj, .cont").removeClass("activeLink");
+      });
+      app.controller("eduCtrl", function($scope) {
+            $(".edu").addClass("activeLink");
+            $(".about, .workExp, .skills, .proj, .cont").removeClass("activeLink");
+      });
+      app.controller("skillsCtrl", function($scope) {
+            $(".skills").addClass("activeLink");
+            $(".about, .workExp, .edu, .proj, .cont").removeClass("activeLink");
+      });
+      app.controller("projectsCtrl", function($scope) {
+            $(".proj").addClass("activeLink");
+            $(".about, .workExp, .edu, .skills, .cont").removeClass("activeLink");
+      });
+      app.controller("contactCtrl", function($scope) {
+            $(".cont").addClass("activeLink");
+            $(".about, .workExp, .edu, .skills, .proj").removeClass("activeLink");
+      });
+  </script>
+
+</body>
+</html>

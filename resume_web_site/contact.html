@@ -1,0 +1,82 @@
+<strong>Contact</strong>
+<h2>Artur Mukhametyanov</h2>
+
+<p>I'm looking forward to hearing from you!</p>
+<address>
+<h4>Address</h4>
+<p>67 Hildenboro Square<br>
+Scarborough, ON, M1W 1Y2, Canada<br>
+<a href="https://www.google.com.br/maps/place/67+Hildenboro+Square,+Scarborough,+ON+M1W+1Y2/@43.8024132,-79.3211207,17z/data=!3m1!4b1!4m5!3m4!1s0x89d4d3bdb62e0f0d:0x79e563bc83e8fae5!8m2!3d43.8024132!4d-79.3198193"
+target="_blank">Google Map</a></p>
+</address>
+
+<form id="contact" method="post" >
+<fieldset>
+  <input type="text" placeholder="Full Name" name="name">
+  <span id="errorForName" class="error" style="color:red;"></span>
+  <input type="email" placeholder="Email Address" name="email">
+  <span id="errorForEmail" class="error" style="color:red;"></span>
+  <textarea placeholder="Your message..." name="message"></textarea>
+</fieldset>
+<div style="color:#ff9966;text-align:center;font-weight:bold;font-size:14px;"></div>
+<input type="submit" class="button" name="submit" value="Send">
+</form>
+
+<!-- popup window -->
+<div id="popup_bg">
+  <div class="popup_main_div">
+       <div class="close_popup_div" title="Close this window" onclick="closePopup()">
+             <p>✖</p>
+       </div>
+       <div class="aboutMe">
+            <h4 id="status_email"></h4>
+            <input id="confirmation" type="submit" class="button" value="Ok" onclick="closePopup()">
+       </div>
+  </div>
+</div>
+<script>
+$(document).ready(function() {
+      // console.log("HI");
+      var popupDiv = document.getElementById("popup_bg");
+
+      $("#contact").submit(function(e) {
+            $.ajax({
+                  type: "POST",
+                  url: "form_process.php",
+                  data: $("#contact").serialize(),
+                  success: function(data) {
+                        //first, check for error codes
+                        if(data == "3") {
+                              $("#errorForName").text("Name is required");
+                              $("#errorForEmail").text("Email is required");
+                        } else if(data == "2") {
+                              $("#errorForName").text("");
+                              $("#errorForEmail").text("Email is required");
+                        }
+                        else if(data == "1") {
+                              $("#errorForName").text("Name is required");
+                              $("#errorForEmail").text("");
+                        } else {
+                              $("#errorForName").text("");
+                              $("#errorForEmail").text("");
+                              $("input[name=name]").val("");
+                              $("input[name=email]").val("");
+                              $("#status_email").text(data);
+                              openPopup();
+                        }
+                  }
+            });
+
+            e.preventDefault(); //does not redirect to form_process.php file
+      });
+
+});
+
+function openPopup() {
+       popupDiv.style.display = "block";
+}
+
+function closePopup() {
+       popupDiv.style.display = "none";
+}
+</script>
